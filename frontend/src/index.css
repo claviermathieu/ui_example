@@ -1231,10 +1231,80 @@ input[type="number"]:focus {
 }
 
 /* ── Databricks responsive ───────────────────────────────────────────────── */
+
+/* ≤ 1024px — shrink search, tighten padding */
+@media (max-width: 1024px) {
+  .dbx-search { width: 160px; }
+  .dbx-stat-card { padding: 0.8rem 1rem; }
+  .dbx-users-card { padding: 0.8rem 1rem; }
+}
+
+/* ≤ 900px — hide Cluster column, stack detail panel */
 @media (max-width: 900px) {
   .dbx-content.has-detail { flex-direction: column; }
-  .dbx-detail { width: 100%; border-left: none; border-top: 1px solid #1e293b; }
+  .dbx-detail { width: 100%; border-left: none; border-top: 1px solid #1e293b; max-height: 60vh; }
   .dbx-stats-bar { flex-wrap: wrap; }
   .dbx-stat-card, .dbx-users-card { min-width: 120px; }
   .dbx-form-row { grid-template-columns: 1fr; }
+  /* Hide Cluster column */
+  .dbx-table th:nth-child(3),
+  .dbx-table td:nth-child(3) { display: none; }
+}
+
+/* ≤ 768px — stack toolbar, hide Duration + Time columns, full-width search */
+@media (max-width: 768px) {
+  .dbx-header { padding: 0.75rem 1rem; }
+
+  .dbx-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+  }
+  .dbx-toolbar-right { flex-direction: column; gap: 0.4rem; }
+  .dbx-select,
+  .dbx-search { width: 100%; }
+  .dbx-filter-group { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+
+  /* Hide Duration and Time columns */
+  .dbx-table th:nth-child(6),
+  .dbx-table td:nth-child(6),
+  .dbx-table th:nth-child(7),
+  .dbx-table td:nth-child(7) { display: none; }
+
+  /* Detail panel as fixed overlay */
+  .dbx-content.has-detail { position: static; }
+  .dbx-detail {
+    position: fixed;
+    inset: 44px 0 0 0;
+    width: 100%;
+    max-height: none;
+    z-index: 20;
+    border-top: none;
+    border-left: none;
+  }
+}
+
+/* ≤ 540px — hide Notebook column, compact user cell, 2-col stats grid */
+@media (max-width: 540px) {
+  .dbx-header-title { font-size: 0.9rem; }
+
+  /* Stats bar: 2×2 grid */
+  .dbx-stats-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+  .dbx-users-card { grid-column: span 2; }
+
+  /* Hide Notebook column */
+  .dbx-table th:nth-child(2),
+  .dbx-table td:nth-child(2) { display: none; }
+
+  /* User cell: avatar only, hide name & team */
+  .user-name, .user-team { display: none; }
+  .cell-user { justify-content: center; }
+
+  /* Compact table padding */
+  .dbx-table td,
+  .dbx-table th { padding: 0.6rem 0.5rem; }
+
+  /* Compact download buttons */
+  .dl-btn { font-size: 0.68rem; padding: 0.2rem 0.4rem; }
 }
