@@ -1230,6 +1230,269 @@ input[type="number"]:focus {
   padding-top: 0.25rem;
 }
 
+/* ── Run monitor header additions ───────────────────────────────────────── */
+.dbx-back-btn {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+.dbx-back-btn:hover { color: #e2e8f0; }
+
+.dbx-run-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dbx-run-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* ── App status badge ────────────────────────────────────────────────────── */
+.app-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ── Marketplace ─────────────────────────────────────────────────────────── */
+.dbx-marketplace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.dbx-market-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  flex-wrap: wrap;
+}
+
+.dbx-market-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.02em;
+}
+
+.dbx-market-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+.dbx-market-search { width: 240px; }
+
+.dbx-market-cats {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.65rem 2rem;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.dbx-market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  align-items: start;
+}
+
+/* ── App card ────────────────────────────────────────────────────────────── */
+.dbx-app-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-left: 4px solid var(--app-color, #3b82f6);
+  border-radius: 12px;
+  padding: 1.1rem 1.1rem 0.9rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.dbx-app-card:hover {
+  background: #111827;
+  box-shadow: 0 0 0 1px var(--app-color, #334155)40;
+}
+
+.app-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.app-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.app-card-top-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.app-card-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  line-height: 1.2;
+}
+
+.app-card-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.app-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.app-card-category {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0.1rem 0.45rem;
+  flex-shrink: 0;
+}
+
+.app-card-team {
+  font-size: 0.72rem;
+  color: #475569;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid #1e293b;
+  font-size: 0.72rem;
+}
+
+.app-card-runs   { color: #475569; font-weight: 600; }
+.app-card-lastrun { color: #334155; }
+
+.app-card-open {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.dbx-app-card:hover .app-card-open { opacity: 0.85; }
+
+/* ── Add app card ────────────────────────────────────────────────────────── */
+.dbx-app-card-add {
+  background: transparent;
+  border: 2px dashed #1e293b;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 160px;
+  padding: 1.5rem;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: center;
+}
+.dbx-app-card-add:hover { border-color: #3b82f6; background: rgba(59,130,246,0.03); }
+
+.add-app-plus  { font-size: 1.6rem; color: #334155; line-height: 1; }
+.add-app-label { font-size: 0.85rem; font-weight: 700; color: #475569; }
+.add-app-hint  { font-size: 0.72rem; color: #334155; }
+.dbx-app-card-add:hover .add-app-plus,
+.dbx-app-card-add:hover .add-app-label { color: #3b82f6; }
+.dbx-app-card-add:hover .add-app-hint  { color: #475569; }
+
+/* ── Add app form extras ─────────────────────────────────────────────────── */
+.dbx-text-input {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 7px;
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.dbx-text-input:focus { outline: none; border-color: #3b82f6; }
+
+.dbx-textarea {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 7px;
+  color: #f1f5f9;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  resize: vertical;
+  line-height: 1.5;
+  transition: border-color 0.15s;
+}
+.dbx-textarea:focus { outline: none; border-color: #3b82f6; }
+.dbx-textarea::placeholder { color: #475569; }
+
+.color-swatches { display: flex; gap: 0.5rem; padding-top: 0.2rem; flex-wrap: wrap; }
+
+.color-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s, border-color 0.1s;
+  flex-shrink: 0;
+}
+.color-swatch:hover   { transform: scale(1.15); }
+.color-swatch.selected { border-color: #fff; transform: scale(1.1); box-shadow: 0 0 0 2px rgba(255,255,255,0.3); }
+
 /* ── Databricks responsive ───────────────────────────────────────────────── */
 
 /* ≤ 1024px — shrink search, tighten padding */
@@ -1283,6 +1546,14 @@ input[type="number"]:focus {
     border-top: none;
     border-left: none;
   }
+}
+
+/* Marketplace responsive */
+@media (max-width: 768px) {
+  .dbx-market-topbar { padding: 1rem; }
+  .dbx-market-search { width: 100%; }
+  .dbx-market-cats   { padding: 0.5rem 1rem; }
+  .dbx-market-grid   { grid-template-columns: 1fr; padding: 1rem; }
 }
 
 /* ≤ 540px — hide Notebook column, compact user cell, 2-col stats grid */
